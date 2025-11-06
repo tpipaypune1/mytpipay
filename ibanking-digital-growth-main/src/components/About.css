@@ -1,0 +1,249 @@
+
+.about {
+  background: var(--light-bg);
+  position: relative;
+}
+
+.about::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--teal), transparent);
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+.about-text h2 {
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.about-text h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 60px;
+  height: 4px;
+  background: var(--gradient-primary);
+  border-radius: 2px;
+}
+
+.lead {
+  font-size: 1.3rem;
+  color: var(--primary-blue);
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.about-text p {
+  margin-bottom: 1.5rem;
+  line-height: 1.7;
+}
+
+.about-features {
+  margin-top: 2rem;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.feature:hover {
+  transform: translateX(10px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.feature-icon {
+  font-size: 2rem;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.feature-text h4 {
+  color: var(--primary-blue);
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.feature-text p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.about-stats {
+  text-align: center;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.stat-card {
+  background: white;
+  padding: 2rem 1rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--gradient-primary);
+}
+
+.stat-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(30, 58, 138, 0.15);
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  color: var(--text-secondary);
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.trust-badges {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.badge {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: white;
+  padding: 1rem 1.5rem;
+  border-radius: 25px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.badge:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.badge-icon {
+  font-size: 1.2rem;
+}
+
+.badge span {
+  font-weight: 500;
+  color: var(--primary-blue);
+  font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .about-content {
+    gap: 3rem;
+  }
+  
+  .stats-grid {
+    gap: 1rem;
+  }
+  
+  .stat-card {
+    padding: 1.5rem 1rem;
+  }
+  
+  .stat-number {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    text-align: center;
+  }
+  
+  .about-text h2::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  
+  .trust-badges {
+    gap: 1rem;
+  }
+  
+  .feature {
+    justify-content: center;
+    text-align: left;
+  }
+  
+  .feature:hover {
+    transform: translateY(-5px);
+  }
+}
+
+@media (max-width: 480px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .trust-badges {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .badge {
+    justify-content: center;
+  }
+  
+  .feature {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .stat-number {
+    font-size: 1.8rem;
+  }
+}
